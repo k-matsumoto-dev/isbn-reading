@@ -4,7 +4,87 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  color: #111;
+  margin: 16px;
+  background-color: #fff9ee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+th {
+  text-align: left;
+  width: 90px;
+  vertical-align: top;
+  color: #444;
+  font-weight: 600;
+}
+
+td {
+  color: #111;
+}
+
+.invisible {
+  display: none;
+}
+
+.container {
+  display: grid;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container > section {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.125);
+}
+
 #camera-area {
-  width: 640px;
-  height: 480px;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+#camera-area video,
+#camera-area canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#camera-guide {
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 35%;
+  height: 25%;
+  border: 3px dashed rgba(255, 255, 255, 0.85);
+  border-radius: 6px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.15) inset;
+  transition: transform 0.12s ease;
+}
+
+@media (max-width: 420px) {
+  #camera-guide {
+    top: 32%;
+    height: 26%;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+#camera-control {
+  margin-top: 8px;
 }

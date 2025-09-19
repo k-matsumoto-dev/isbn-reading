@@ -10,21 +10,33 @@
   </head>
 
   <body>
-    <section>
-      <h2>ISBN読み取り</h2>
-      <div id="camera-area"></div>
-      <button id="scan-btn">スキャン</button>
-    </section>
+    <main class="container">
+      <section>
+        <h2>ISBN読み取り</h2>
 
-    <section>
-      <h2>ISBN情報</h2>
-      <table>
-        <tr>
-          <th>ISBN</th>
-          <td id="isbn">XXXXXXXXXXXXX</td>
-        </tr>
-      </table>
-    </section>
+        <!-- カメラ表示領域 -->
+        <div id="camera-area" aria-label="カメラ領域" class="invisible">
+          <!-- ガイド枠 -->
+          <div id="camera-guide" aria-hidden="true"></div>
+        </div>
+
+        <!-- カメラ操作 -->
+        <div id="camera-control">
+          <button id="scan-start-btn">スキャン</button>
+          <button id="scan-stop-btn" class="invisible">停止</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>ISBN情報</h2>
+        <table id="isbn-info">
+          <tr>
+            <th>ISBN</th>
+            <td id="isbn">XXXXXXXXXXXXX</td>
+          </tr>
+        </table>
+      </section>
+    </main>
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>
