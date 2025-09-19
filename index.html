@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="ISBNを読み取る検証">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISBN検証</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js" integrity="sha512-bCsBoYoW6zE0aja5xcIyoCDPfT27+cGr7AOCqelttLVRGay6EKGQbR6wm6SUcUGOMGXJpj+jrIpMS6i80+kZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+
+  <body>
+    <section>
+      <h2>ISBN読み取り</h2>
+      <div id="camera-area"></div>
+      <button id="scan-btn">スキャン</button>
+    </section>
+
+    <section>
+      <h2>ISBN情報</h2>
+      <table>
+        <tr>
+          <th>ISBN</th>
+          <td id="isbn">XXXXXXXXXXXXX</td>
+        </tr>
+      </table>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
