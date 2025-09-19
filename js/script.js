@@ -107,6 +107,7 @@ function stopScanner() {
 
   document.getElementById('scan-start-btn').classList.remove('invisible');
   document.getElementById('scan-stop-btn').classList.add('invisible');
+  document.getElementById('camera-area').classList.add('invisible');
 }
 
 function onDetected(result) {
@@ -159,5 +160,4 @@ function onDetected(result) {
 document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById('scan-start-btn').addEventListener('click', startScanner);
   document.getElementById('scan-stop-btn').addEventListener('click', stopScanner);
-  document.getElementById('camera-area').classList.add('invisible');
 });
