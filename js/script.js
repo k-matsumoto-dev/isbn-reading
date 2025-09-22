@@ -49,6 +49,8 @@ function startScanner() {
 
   // Quagga 設定
   const config = {
+    numOfWorkers: (navigator.hardwareConcurrency && navigator.hardwareConcurrency > 1) ? navigator.hardwareConcurrency - 1 : 2,
+    locate: true,
     inputStream: {
       name: "Live",
       type: "LiveStream",
@@ -62,23 +64,22 @@ function startScanner() {
       // ガイド枠と一致させる
       area: { top: "35%", right: "12.5%", left: "12.5%", bottom: "40%" }
     },
-    locator: {
-      patchSize: "medium",
-      halfSample: true
-    },
-    numOfWorkers: (navigator.hardwareConcurrency && navigator.hardwareConcurrency > 1) ? navigator.hardwareConcurrency - 1 : 2,
     frequency: 15,
     decoder: {
       readers: ["ean_reader"], // EAN-13 を読む
       multiple: false
     },
-    locate: true
+    locator: {
+      patchSize: "medium",
+      halfSample: true
+    },
+    debug: false
   };
 
-  Quagga.init(config, function(err) {
+  Quagga.init(config, function(e) {
 
-      if (err) {
-          logStatus(err.message);
+      if (e) {
+          console.error(e);
           return;
       }
 
