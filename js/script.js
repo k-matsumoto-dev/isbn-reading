@@ -1,6 +1,6 @@
 let hasConfirmedISBN  = false;
 let lastCode          = null;
-let startCount        = 0;
+let stableCount       = 0;
 
 /**
  * 同じコードが連続で出たら確定
