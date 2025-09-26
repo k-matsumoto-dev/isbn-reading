@@ -56,8 +56,8 @@ function startScanner() {
       type: "LiveStream",
       target: document.getElementById('camera-area'),
       constraints: {
-        width: { min: 640 },
-        height: { min: 480 },
+        width: { ideal: 640 },
+        height: { ideal: 480 },
         facingMode: { ideal: "environment" }
       },
       // ROI (検出枠) を指定
@@ -100,9 +100,9 @@ function stopScanner() {
   Quagga.stop();
   Quagga.offDetected(onDetected);
 
-  hasConfirmedISBN    = false;
-  lastCode    = null;
-  stableCount = 0;
+  hasConfirmedISBN  = false;
+  lastCode          = null;
+  stableCount       = 0;
 
   logStatus('スキャン終了');
 
